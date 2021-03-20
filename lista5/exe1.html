@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/style.css" media="screen" />
+	<script>
+		$(function(){ 
+			let acervoArray = new Array();
+			$("#botao").click(function(){
+				let tituloLivro =$("#titulo").val();
+				let descricaoDoLivro =$("#descricao").val();
+				let generoDoLivro =$("#genero").val();
+				let autorDoLivro =$("#autor").val();
+				$("#acervo") .append($("<tr>")
+					   .append($("<td>") .text(tituloLivro) )
+					   .append($("<td>") .text(descricaoDoLivro) )
+					   .append($("<td>") .text(generoDoLivro) )
+					   .append($("<td>") .text(autorDoLivro) )
+					    ) );
+				var livro = {"titulo": tituloLivro, "descricao": descricaoDoLivro,
+					"genero" : generoDoLivro ,"autor": autorDoLivro };
+				acervoArray.push(livro);
+				$("input[name=acervo_post]").val(JSON.stringify(acervoArray));
+				$("#titulo").val("");
+				$("#descricao").val("");
+				$("#genero").val("");
+				$("#autor").val("");
+				})
+		 
+			
+			 })
+		
+		 });
+
+
+
+		</script>
+</head>
+<body>
+
+<fieldset>
+	<legend>Cadastro de livros</legend>
+	<input type="text" id="titulo" placeholder="titulo"><br>
+	<textarea id="descricao"></textarea> <br>
+	<select id="genero">
+		<option value="Romance">Romance</option>
+		<option value="Drama">Drama</option>
+		<option value="Terror">Terror</option>
+		<option value="Ficção">Ficção</option>
+		<option value="Técnico">Técnico</option>
+	</select>
+	<br>
+	<input type="text" id="autor" placeholder="autor">
+	<br>
+	<button id="botao">Adicionar a lista </button>
+</fieldset>
+
+<h1>Catálogo</h1>
+
+	<table id="acervo">
+	<h1>	<tr><th>Título</th><th>Descrição</th><th>Gênero</th><th>Autor</th><th></th></tr></h1>
+	</table>
+	<form action="http://rafaelescalfoni.net/web/livros.php" 
+		method="post">
+		<input type="hidden" name="acervo_post">
+		<input type="submit" value="Salvar no Banco de Dados">
+	</form>
+	<a href="index.html" class="volt">Voltar</a>
+</body>
+</html>
