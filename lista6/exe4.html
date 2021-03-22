@@ -1,0 +1,76 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen" />
+
+    <script>
+        function ocorrencias(palavras, palavra) {
+            return palavras.filter((v) => (v === palavra)).length;
+
+        }//contador de ocorrências
+        $(function () {
+            $("#limpeza").click(function () {
+                $("#frase").val("");
+                $("#texto1").text("");
+            })
+            $("#array").click(function () {
+                let frase = $("#frase").val();
+                var palavras = frase.split(" ").map(function (palavra) {
+                    return palavra.toLocaleLowerCase();
+                });
+                var arrayo = new Array;
+                var i = 0;
+                var x = 0;
+                var foio = [];
+                for (palavra of palavras) {
+                    if (foio.indexOf(palavra) == -1) {
+                        let oco = ocorrencias(palavras, palavra);
+                        foio.push(palavra);
+                        arrayo[x] = oco;
+                    }
+                    else {
+                        x--;
+                    }
+                    i++;
+                    x++;
+                }
+                var empateobj = [];
+                var maiorpalavra;
+                var contador = 0;
+                for (i = 0; i < foio.length; i++) {
+                    var maior = Math.max.apply(null, arrayo); //BIBILIOTECA DE MATEMÁTICA DO JS
+                    if (arrayo[i] == maior) {
+                        contador++;
+                        maiorpalavra = foio[i];
+                        empateobj[i] = foio[i];
+                    }
+                }
+                if (contador > 1) {
+                    $("#texto1").text(empateobj + "/ Essas palavras empataram ,  com " + arrayo[0] + " ocorrências ");
+                }
+                else {
+                    $("#texto1").text("A palavra mais ocorrida: " + maiorpalavra + ", com :  " + maior + " ocorrências.");
+                }
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <h4>Substituir palavras em um texto</h4>
+    <input type="text" id="frase" placeholder="Texto" class="maior">
+    <button id="array">enviar</button>
+    <p id="texto1"></p>
+    <button id="limpeza">Limpar</button>
+    <footer>
+        <a class="volt" href="../index.html">Voltar</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Tarefa 1</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen" />
+
+    <script>
+        $(function () {
+            $("#inverter").click(function () {
+                let frase = $("#frase").val();
+                let result = "";
+                if (frase != "") {
+                    for (j = frase.length - 1; j >= 0; j--) {
+                        result += frase[j];
+                    }
+                }
+                $("#texto1").text(result);
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <h4>Faça um programa que leia uma frase e escreva abaixo invertendo os caracteres - o primeiro se torna o último, o
+        segundo o penúltimo e assim por diante!</h4>
+    <input type="text" id="frase">
+    <button id="inverter">Inverta</button>
+    <p id="texto1"></p>
+    <footer>
+		<a href="../index.html" class="volt">Voltar</a>
+	</footer>
+</body>
+
+</html>
