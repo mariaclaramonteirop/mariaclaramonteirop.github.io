@@ -1,0 +1,79 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Soluções</title>
+	<meta charset="utf-8">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/style.css"/>
+    <link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css">
+	<link href="../css/style.css" rel="stylesheet" type="text/css"> 
+	<link href="../css/font-awesome.css" rel="stylesheet" type="text/css"> 
+	<link href="../css/animate.css" rel="stylesheet" type="text/css">
+
+</head>
+<body>
+
+
+</div>
+</header>
+
+<br><br>
+<p id="desta" >MAYSA E MARIA CLARA  MONTEIRO</p>
+<h1 id="especialexer">Cálculo de concentração em mol da Agua e o sal.</h1>
+
+  <p id="destaque" >Concentração = quantidade de soluto em mol/volume da solução. Haverá também a conversão de gramas para mol (1 mol = 342 gramas).
+      <form>
+          <input type="number" id="solutosal" placeholder="quantidade do soluto em gramas:"><br>
+          <input type="number" id="solucaoagua" placeholder="Volume da solução em litros:"><br><br>
+          <button type="button" onclick="simu()" class="volt"  > Calcular </button>
+       
+          
+      </form><br>
+      </div>
+   
+
+<div class="col-md-5 col-sm-5" style="padding-left: 70px; background-color: #C985E6 ; padding-bottom: 5px; padding-top: 5px; border: solid rgb(237, 166, 255) 2px;">
+<p id="sala"></p>
+</div>
+ <div id="main-nav" class="collapse navbar-collapse navStyle">
+        <ul class="nav navbar-nav" id="mainNav">
+          <li><a href="../index.html" id="bute" class="volt">Home</a></li>
+          <li ><a href="2quimica.html" class="volt" id="bute">QUÍMICA</a></li>
+        </ul>
+      </div>
+
+<script >
+function simu()
+  {
+    var solutosal = document.getElementById("solutosal").value;
+    var solucaoagua = document.getElementById("solucaoagua").value;
+    solutosal = parseFloat(solutosal);
+    solucaoagua = parseFloat(solucaoagua);
+    var solutosalp = 357;
+    var solucaoaguap = 1;
+    var r1 = solutosal * solucaoaguap;
+    var r2 = solutosalp * solucaoagua;
+    var r3 = r1 / r2;
+    var ms = solutosal;
+      var mm = 58.44 * solutosal;
+      var v = solucaoagua;
+      var M = ms/(mm*v);
+  
+  
+    if(r3>1)
+    {
+      var result = "<b>concentração = massa do soluto/massa molar*Volume</b><br> Massa molar (m*58,44) <br><br><br>Seguindo a fórmula de molaridade acima, temos: <br> concentração = " + ms + " / " + mm + " * " + v + " = <b>" + M + "</b> <br> A concentração molar da solução é de "+ M +"(g/mol) <br>HÁ CORPO DE FUNDO <br>  ";
+    } else {
+          var result = "<b>concentração = massa do soluto/massa molar*Volume</b><br>    Massa molar (m*58,44) <br><br>Seguindo a fórmula de molaridade acima, temos: <br> concentração = " + ms + " / " + mm + " * " + v + " = <b>" + M + "</b> <br> A concentração molar da solução é de "+ M +"(g/mol) <br>NÃO HÁ CORPO DE FUNDO <br>  ";
+      }
+  
+      document.getElementById("sala").innerHTML = result;
+  
+  }
+  </script>
+<br><br><br><br><br><br><br><br><br>
+<a href="solucoes.html" id="voltar" class="volt">Voltar</a><br>
+
+</body>
+</html>
