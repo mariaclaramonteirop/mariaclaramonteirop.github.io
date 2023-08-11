@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+	<html>
+
+	<head>
+		<title>Linguagens</title>
+		<meta charset="utf-8">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen" />
+		<script>
+			$(function () {
+				var glossario = [{
+					"id": 1, "termo": "W3C"
+					, "definicao": "World Wide Web Consortium – escritório responsável por desenvolver normas técnicas para a Internet"
+					, "dataCriacao": "2015-04-01"
+				}
+
+					, {
+					"id": 2, "termo": "HTML"
+					, "definicao": "HyperText Markup Language – linguagem de marcação utilizada para estruturar páginas web"
+					, "dataCriacao": "2017-05-12"
+				}
+
+					, {
+					"id": 3, "termo": "CSS"
+					, "definicao": "Cascade Style Sheet – Folhas de estilo utilizadas para configurar a visualização de  páginas web."
+					, "dataCriacao": "2018-10-11"
+				}
+				];
+
+				$(glossario).each(function (idx, termos) { 
+					let titulo = termos.termo;
+					$("#termos")
+						.append(
+							$("<li>")
+								.text(titulo).attr("value", idx)
+						)
+
+					$("#termos").on("click", "li", function () {
+						let id = $(this).val(); 
+						$("#termo").text(glossario[id].termo);
+						$("#definicao").text(glossario[id].definicao);
+						$("#autor").text(glossario[id].autor);
+						$("#dataCriacao").text(glossario[id].dataCriacao);
+
+					})
+
+
+				})
+
+			});
+
+		</script>
+	</head>
+   
+	<body>
+
+		<h1>Dicionário Online</h1>
+		<p> Clique e conheça os termos</p>
+		<ul id="termos"></ul>
+		<div class="fundo">
+			<p id=termo></p>
+			<p id=definicao></p>
+			<p id=dataCriacao></p>
+		</div>
+<a href="../index.html" class="volt">Voltar</a>	</body>
+
+	</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+
+    <title>Programação cliente web e Química</title>
+    <script> 
+function agua()
+{
+	var grama_h2 =2; 
+	var grama_O2 =32;
+	var grama_H2O =18;
+	var valor = document.getElementById("valor").value;
+	valor =  parseFloat(valor);
+	var reagente = document.getElementById("reagente").value;
+	var reagente2 = document.getElementById("reagente2").value;
+	var relacao = document.getElementById("relacao").value;
+	var resultado = "";
+	if(reagente == "H2O" && reagente2 == "H2")
+	{
+		var conta1 = valor * grama_h2;
+		var result=  conta1 / grama_H2O; 
+		
+		resultado = valor + " gH2O - xgH2" + " <br> 18gH2O - 2gH2" +  
+		"<br> <br> " + valor + " gH2O * 2gH2" + " <br> 18gH2O * XgH2 <br> <br> O resultado é: " + valor + " gH2O - " + result + " gH2" ;
+		document.getElementById("conta").innerHTML = resultado;
+	}
+
+	if(reagente == "H2O" && reagente2 == "H2O")
+	{
+		resultado = "Entrada inválidada selecionar as correlações H2OG - H2G , O2G - H2OG ";
+		document.getElementById("conta").innerHTML = resultado;
+	}
+
+	if(reagente == "O2" && reagente2 == "H2O")
+	{
+		var conta1 = valor * grama_H2O;
+		var result=  conta1 / (grama_O2/2); 
+		
+		resultado = valor + " gO2 - xgH2O" + " <br> 16gO2 - 18gH2O" +  
+		"<br> <br> " + valor + " gO2 * 18gH2O" + " <br> XgH2O * 16gO2 <br> <br> O resultado é: " + valor + " gO2 - " + result + " gH2O" ;
+		document.getElementById("conta").innerHTML = resultado;
+	}
+
+	if(reagente == "O2" && reagente2 == "H2")
+	{
+		var conta1 = valor * grama_h2;
+		var result=  conta1 / (grama_O2/2); 
+		
+		resultado = valor + " gO2 - xgH2" + " <br> 16gO2 - 2gH2" +  
+		"<br> <br> " + valor + " gO2 * 2gH2" + " <br> XgH2 * 16gO2 <br> <br> O resultado é: " + valor + " gO2 - " + result + " gH2" ;
+		document.getElementById("conta").innerHTML = resultado;
+	}
+
+
+}
+
+
+
+function limita()
+{
+	var o2 = document.getElementById("o2").value;
+	var h2 = document.getElementById("h2").value;
+	o2 = parseFloat(o2);
+	h2 = parseFloat(h2);
+	var grama_h2 =2; 
+	var grama_O2 =32;
+	var grama_H2O = 18;
+	var conta1 =grama_h2* o2;
+	var conta2 = conta1 / (grama_O2/2);
+	var resultado ="";
+	var temp_excesso = 0;
+	
+	var conta3 =(grama_O2/2)* h2;
+	var conta4 = conta3 / grama_h2;
+
+
+	var contah2o = (grama_H2O * h2) / 2;
+	var contah2og = (grama_H2O * o2) / 16;
+
+
+
+	if(conta2<h2)
+	{
+		resultado = "2g H2 - 16g O2 <br>" + 
+		 "XgH2 - " + o2 + " g O2 <br><br><br> 2g H2 X = " + 
+		 o2 +" gO2 = Xg O2 X 16g O2  <br><br> Xg H2 = " + conta2 + 
+		 " <br> Para " + o2 + " gO2 é necessário " + conta2 + 
+		 " gH2";
+		temp_excesso = h2 - conta2;
+		resultado += "<br> <p>Em excesso: H2; <br> Limitante: O2, <br>Excesso de h2g: " + 
+		temp_excesso + " gH2<br>  o H2O formado é :" + contah2og +" gH2O</p>";
+	}
+
+
+	if(conta2>h2)
+	{
+		resultado = "2g H2 - 16g O2 <br>" +  
+		h2 + " gH2 -  xg O2 <br><br><br> 2g H2 X XgO2 = " + 
+		h2 +" gH2 X 16g O2  <br><br> Xg O2 = " + conta4 + 
+		" <br> Para " + h2 + " gH2 é necessário " + conta4 + " gO2";
+		temp_excesso = o2 - conta4;
+		resultado += " <br> <p>Em excesso: H2; <br> Limitante: O2, <br>Excesso de h2g: " + 
+			temp_excesso + " gO2 <br> o H2O formado é :" + contah2o +" gH2O</h3>";
+		}
+
+
+
+	if(h2-conta2==0)
+	{
+		resultado = "2g H2 - 16g O2 <br>" +  
+		"XgH2 - " + o2 + " g O2 <br><br><br> 2g H2 X = " +
+		 o2 +" gO2 = Xg O2 X 16g O2  <br><br> Xg H2 = " + conta2 + 
+		 " <br> Para " + o2 + " gO2 é necessário " + conta2 + 
+		 " gH2 <br> o H2O formado é :" + contah2o +" gH2O";
+		resultado += "<br> <h3>Não há nenhum elemento em excesso!!!</h3>";
+	}
+
+	document.getElementById("conta").innerHTML = resultado;
+
+}
+
+
+   </script>
+  </head>
+  <body>
+    <header>
+        <h1 id="especialexer"> simulação</h1>
+        <h1 id="nome"> Maria Clara Monteiro Pacheco e Maysa Aquino</h1>
+  </header>
+
+  <div id="page-landing">
+    <div id="container">
+      <h1>Simulação 3: O2 (g) --- H2 (g): H2O</h1>
+      <div id="materias">
+        <br>
+        <input id = "o2" 
+		type="number" 
+		placeholder="Insira g de O2"
+	>
+
+	<input id = "h2" 
+		type="number" 
+		placeholder="Insira g de H2"
+	>
+	<button onclick="limita();">Executar</button>
+	<p id="conta"></p>
+
+
+      </div> </div> </div> 
+ 
+
+
+      <li><a href="../1quimica.html">Voltar</a></li>
+            </body>
+
+</html>

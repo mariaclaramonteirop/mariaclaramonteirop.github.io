@@ -1,0 +1,89 @@
+body {
+		  background-image: url("./fundo.jpg");
+		  background-position: left top;
+		  background-repeat: no-repeat;
+		  background-attachment: fixed;
+		  margin-left :200px;
+		  margin-right :50px;
+		  font-family: Arial;
+          font-size:1.3em;
+		}
+		p{
+        text-align: justify;
+
+		}
+		h1
+	{
+	  font-family: 'Sofia', cursive;
+	  font-style: oblique;
+	  color: rgb(125, 92, 167);
+	  }
+	
+		mark{
+			background-color:rgb(125, 92, 167);
+			color:white;
+			display:block;
+			text-align:center;
+			font-family: "URW Chancery L", cursive;
+			font-style: italic;
+			font-size: 1.5em;
+		}
+		.titulo{
+			font-family:'Sofia', cursive;
+			text-align: left;
+		}
+		h2{
+		    font-family:'Sofia', cursive;
+			color: rgb(24, 109, 219);
+		}
+		h3{
+		    font-family:'Sofia', cursive;
+			color:rgb(24, 109, 219);
+		}
+		
+		strong{
+			color: rgb(125, 92, 167);
+		}
+		.especial{
+			font-family: 'Allura';font-size: 1.5em;
+		}
+		#topo
+	{
+		position: fixed;
+		top:0;
+		background-color:yellow;
+		width:100%;
+	  
+	}
+	.container{
+		background-color: #e2e2e2;
+	}	
+		
+
+
+		
+				
+	
+		
+				
+				
+				
+	
+		
+		
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   

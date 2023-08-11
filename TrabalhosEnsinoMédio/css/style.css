@@ -1,0 +1,199 @@
+#especial{
+	font-family: 'Lagosta', cursiva;;
+	font-size: 30px;
+	text-align: center;
+	color: rgb(249, 220, 255);
+
+}
+
+.bprincipal{
+	background-color: #C985E6; 
+    color: white;
+    border-radius: 40px ;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;  /* sem linha no texto */
+    margin: 10px ;
+    display: block; /* importantíssimo */
+    font-size: 16px;
+    box-shadow: 0 8px 16px 0 rgba(255, 255, 255, 0.5), 0 6px 20px 0 rgba(255, 255, 255, 0.15);
+
+    
+}
+
+.bprincipal:hover {
+    background-color: rgb(209, 58, 240); 
+    color: white;
+}
+
+#meunome{
+	
+	color: #852afc;
+	top:87%;
+	padding-top: 50px;
+	padding-left: 320px;
+	font-family: Trattatello, fantasy;
+
+}
+#nome{
+	font-family: 'Lagosta', cursiva;;
+	font-size: 30px;
+	text-align: center;
+	color: rgb(253, 240, 255);
+	background-color: #C985E6;
+	border-radius: 40px ;
+
+}
+
+#sobremim{
+	
+	width: 35%;
+	float: right;
+	border-radius: 15px 50px;
+}
+#pagina{
+	background-color: #d616bd;
+	width: 63.5%;
+	float: left;
+	border-inline: border-box;
+	padding-bottom: 40px;
+	border: 5px solid #C985E6;
+	border-radius: 30px 30px 30px 30px;
+	
+}
+#tamanho{
+	 width: 412.5px;
+
+	border : 5px  sólido   #C985E6 ;
+	border-radius: 30px 30px 30px 30px;
+
+}
+
+
+footer{
+	top: 87%;
+    position: absolute;
+    bottom: 0;
+   
+}
+
+#l1
+{
+    float: left;
+    width: 60%;
+    height: 100%;
+	padding: 0% 0% 0% 10%;
+	
+
+}
+
+#l2
+{
+    float: left;
+    width: 25%;
+	height: 100%;
+
+}
+
+#l3{
+	float: left;
+    width: 25%;
+	height: 100%;
+	
+}
+
+.nome{
+	font-family: impact;
+	text-decoration: none;
+
+}
+
+#teste{
+color:  #DAA8F0;
+}
+
+#especialexer, #especialtarefas{
+	color: rgb(253, 240, 255);
+	background-color: #C985E6;
+	border-radius: 40px ;
+	font-size: 30px;
+	text-align: center;
+
+}
+#destaque{
+	color: rgb(93, 55, 99);
+	background-color: #f2d3ff;
+	border-radius: 5px ;
+	font-size: 20px;
+	text-align: center;
+
+}
+#desta{
+	color: rgb(93, 55, 99);
+	background-color: #f2d3ff;
+
+	font-size: 20px;
+	text-align: center;
+
+}
+
+input
+{
+    width: 30%;
+    font-size: 15px;
+}
+
+button{
+	background-color: #DAA8F0;
+	color: white;
+	width: 100px;
+	cursor: pointer;
+
+}
+
+h2{
+	font-size: 20px;
+	text-align: center;
+}
+
+#bute{
+	background-color: #C985E6; 
+	color: white;
+	width: 80px;
+	cursor: pointer;
+	box-shadow: 0 8px 16px 0 rgba(255, 255, 255, 0.5), 0 6px 20px 0 rgba(255, 255, 255, 0.15);
+}
+#bute:hover {
+	background-color: rgb(209, 58, 240); 
+	color: white;
+}
+#textodesafio{
+	background-color: #ff99fa;
+
+}
+a{
+    background-color: #cf99e5;
+	color: white;
+
+	
+}
+
+.volt{
+        background-color: #C985E6; 
+        color: white;
+        border-radius: 40px ;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;  /* sem linha no texto */
+        margin: 10px ;
+        display: block; /* importantíssimo */
+        font-size: 16px;
+        box-shadow: 0 8px 16px 0 rgba(255, 255, 255, 0.5), 0 6px 20px 0 rgba(255, 255, 255, 0.15);
+    
+        
+    }
+    
+    .volt:hover {
+        background-color: rgb(209, 58, 240); 
+        color: white;
+    }

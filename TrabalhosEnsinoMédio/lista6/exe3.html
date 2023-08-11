@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>tarefa 3</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen" />
+
+    <script>
+        function Ocorrencia(obj, palavra) {
+            return obj.filter((v) => (v === palavra)).length;
+
+        }
+
+        $(function () {
+
+            $("#limpar").click(function () {
+                $("#tabela").empty();
+                $("#frase").val("");
+            })
+
+            $("#array").click(function () {
+                $("#tabela").empty();
+                let frase = $("#frase").val();
+                var palavras = frase.split(" ").map(function (palavra) {
+                    return palavra.toLocaleLowerCase();
+                });
+                var i = 0;
+                var arryo = [];
+                var testefoi = [];
+                var x = 0;
+                for (palavra of palavras) {
+                    if (testefoi.indexOf(palavra) == -1) {
+                        let ocorren = (Ocorrencia(palavras, palavra));
+                        testefoi.push(palavra);
+                        arryo[x] = ocorren;
+                    }
+                    else
+                        x--;
+                    i++; x++;
+                }
+                for (i = 0; i < testefoi.length; i++) {
+                    let tr = $("<tr>");
+                    $("#tabela").append(tr);
+                    let td = $("<td>");
+                    let td2 = $("<td>");
+                    td.text(testefoi[i]);
+                    td2.text(arryo[i]);
+                    tr.append(td);
+                    tr.append(td2);
+                }; 
+
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <h4>Faça um programa que leia um texto e separe todas as palavras em um array, indicado para cada uma delas o número
+        de vezes que aparece no texto. Imprima o array em uma tabela contendo a palavra e número de ocorrências.</h4>
+    <input type="text" id="frase">
+    <button id="array"> Okay</button>
+    <p id="texto1"></p>
+    <table id="tabela"></table>
+    
+    <footer>
+     <a class="volt" href="../index.html">Voltar</a>
+    </footer>
+</body>
+
+</html>
